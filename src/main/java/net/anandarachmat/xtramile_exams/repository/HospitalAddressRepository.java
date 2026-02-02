@@ -14,18 +14,18 @@ import java.util.UUID;
 @RepositoryRestResource(collectionResourceRel = "hospitalAddresses", path = "hospital-addresses")
 public interface HospitalAddressRepository extends JpaRepository<HospitalAddress, HospitalAddressId> {
 
-//    // Find all address links for a hospital
-//    List<HospitalAddress> findByHospitalId(UUID hospitalId);
-//
-//    // Find all hospital links for an address
-//    List<HospitalAddress> findByAddressId(UUID addressId);
-//
-//    // Check if a specific hospital-address relation exists
-//    boolean existsByHospitalIdAndAddressId(UUID hospitalId, UUID addressId);
-//
-//    // Delete a relation by its composite key parts
-//    void deleteByHospitalIdAndAddressId(UUID hospitalId, UUID addressId);
-//
-//    // Paginated listing (explicit)
-//    Page<HospitalAddress> findAll(Pageable pageable);
+    // READ - Find all address links for a hospital
+    List<HospitalAddress> findByIdHospitalId(UUID hospitalId);
+
+    // READ - Find all hospital links for an address
+    List<HospitalAddress> findByIdAddressId(UUID addressId);
+
+    // READ - Check if a specific hospital-address relation exists
+    boolean existsByIdHospitalIdAndIdAddressId(UUID hospitalId, UUID addressId);
+
+    // READ - Paginated listing
+    Page<HospitalAddress> findAll(Pageable pageable);
+
+    // DELETE - Delete a relation by its composite key parts
+    void deleteByIdHospitalIdAndIdAddressId(UUID hospitalId, UUID addressId);
 }
