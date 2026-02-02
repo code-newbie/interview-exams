@@ -14,27 +14,27 @@ import java.util.UUID;
 @RepositoryRestResource(collectionResourceRel = "medicalRecords", path = "medical-records")
 public interface MedicalRecordRepository extends JpaRepository<MedicalRecord, UUID> {
 
-//    // Find by primary key (convenience; JpaRepository provides findById)
-//    Optional<MedicalRecord> findByMedicalRecordId(UUID medicalRecordId);
-//
-//    // Find all records for a patient
-//    List<MedicalRecord> findByPatientId(UUID patientId);
-//
-//    // Find all records for a hospital
-//    List<MedicalRecord> findByHospitalId(UUID hospitalId);
-//
-//    // Find by record number (unique business identifier)
-//    Optional<MedicalRecord> findByRecordNumber(String recordNumber);
-//
-//    // Search diagnosis/notes (contains, case-insensitive)
-//    List<MedicalRecord> findByDiagnosisContainingIgnoreCase(String diagnosisFragment);
-//
-//    // Paginated listing (explicit for clarity)
-//    Page<MedicalRecord> findAll(Pageable pageable);
-//
-//    // Existence check by record number
-//    boolean existsByRecordNumber(String recordNumber);
-//
-//    // Delete by primary key
-//    void deleteByMedicalRecordId(UUID medicalRecordId);
+    // READ - Find by primary key
+    Optional<MedicalRecord> findByMedicalRecordId(UUID medicalRecordId);
+
+    // READ - Find all records for a patient
+    List<MedicalRecord> findByPatientPatientId(UUID patientId);
+
+    // READ - Find all records for a hospital
+    List<MedicalRecord> findByHospitalHospitalId(UUID hospitalId);
+
+    // READ - Find by record number (unique business identifier)
+    Optional<MedicalRecord> findByMedicalRecordNo(String medicalRecordNo);
+
+    // READ - Search diagnosis/notes (contains, case-insensitive)
+    List<MedicalRecord> findByDiagnosisContainingIgnoreCase(String diagnosisFragment);
+
+    // READ - Paginated listing
+    Page<MedicalRecord> findAll(Pageable pageable);
+
+    // READ - Existence check by record number
+    boolean existsByMedicalRecordNo(String medicalRecordNo);
+
+    // DELETE - Delete by primary key
+    void deleteByMedicalRecordId(UUID medicalRecordId);
 }

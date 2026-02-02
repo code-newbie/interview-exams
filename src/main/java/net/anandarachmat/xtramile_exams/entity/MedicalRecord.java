@@ -30,6 +30,9 @@ public class MedicalRecord {
     @Column(name = "visit_type")
     private String visitType;
 
+    @Column(name = "diagnosis")
+    private String diagnosis;
+
     @Column(name = "insurance_provider")
     private String insuranceProvider;
 
@@ -57,6 +60,9 @@ public class MedicalRecord {
 
     public String getVisitType() { return visitType; }
     public void setVisitType(String visitType) { this.visitType = visitType; }
+
+    public String getDiagnosis() { return diagnosis; }
+    public void setDiagnosis(String diagnosis) { this.diagnosis = diagnosis; }
 
     public String getInsuranceProvider() { return insuranceProvider; }
     public void setInsuranceProvider(String insuranceProvider) { this.insuranceProvider = insuranceProvider; }

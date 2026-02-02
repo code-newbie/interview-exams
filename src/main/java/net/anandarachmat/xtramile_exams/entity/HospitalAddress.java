@@ -21,11 +21,11 @@ public class HospitalAddress {
 
     public HospitalAddress() {}
 
-//    public HospitalAddress(Hospital hospital, Address address) {
-//        this.hospital = hospital;
-//        this.address = address;
-//        this.id = new HospitalAddressId(hospital.getHospitalId(), address.getAddressId());
-//    }
+    public HospitalAddress(Hospital hospital, Address address) {
+        this.hospital = hospital;
+        this.address = address;
+        this.id = new HospitalAddressId(hospital.getHospitalId(), address.getAddressId());
+    }
 
     // getters and setters
 
@@ -38,4 +38,3 @@ public class HospitalAddress {
     public Address getAddress() { return address; }
     public void setAddress(Address address) { this.address = address; }
 }
-
