@@ -16,19 +16,19 @@ import java.util.UUID;
 public interface PatientAddressRepository extends JpaRepository<PatientAddress, PatientAddressId> {
 
     // READ - Convenience finder for the composite id
-//    Optional<PatientAddress> findByPatientAddressId(PatientAddressId patientAddressId);
+//    Optional<PatientAddress> findByPatientIdIdPatientId(PatientAddressId patientAddressId);
 
     // READ - Find all address links for a patient
-//    List<PatientAddress> findByIdPatientId(UUID patientId);
+    List<PatientAddress> findByIdPatientId(UUID patientId);
 
     // READ - Find all patient links for an address
-//    List<PatientAddress> findByIdAddressId(UUID addressId);
+    List<PatientAddress> findByIdAddressId(UUID addressId);
 
     // READ - Check if a specific patient-address relation exists
     boolean existsByIdPatientIdAndIdAddressId(UUID patientId, UUID addressId);
 
     // READ - Paginated listing
-//    Page<PatientAddress> findAll(Pageable pageable);
+    Page<PatientAddress> findAll(Pageable pageable);
 
     // DELETE - Delete a relation by its composite key parts
     void deleteByIdPatientIdAndIdAddressId(UUID patientId, UUID addressId);
