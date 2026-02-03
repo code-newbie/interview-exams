@@ -16,7 +16,7 @@ import java.util.UUID;
 public interface PatientAddressRepository extends JpaRepository<PatientAddress, PatientAddressId> {
 
     // READ - Convenience finder for the composite id
-//    Optional<PatientAddress> findByPatientIdIdPatientId(PatientAddressId patientAddressId);
+    Optional<PatientAddress> findById(PatientAddressId patientAddressId);
 
     // READ - Find all address links for a patient
     List<PatientAddress> findByIdPatientId(UUID patientId);
